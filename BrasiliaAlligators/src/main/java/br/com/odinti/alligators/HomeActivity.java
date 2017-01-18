@@ -1,5 +1,6 @@
 package br.com.odinti.alligators;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +14,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.net.CookieHandler;
+import java.net.CookieManager;
+
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    LocalStore localStore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,13 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        localStore = new LocalStore(this);
+
+        getFragmentManager().beginTransaction()
+                .replace(R.id.content_frame,
+                        new PerfilFragment())
+                .commit();
     }
 
     @Override
@@ -67,7 +80,10 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_logout) {
+            localStore.clearData();
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            HomeActivity.this.startActivity(intent);
             return true;
         }
 
@@ -81,10 +97,10 @@ public class HomeActivity extends AppCompatActivity
         int id = item.getItemId();
         android.app.FragmentManager fragmentManager = getFragmentManager();
 
-        if (id == R.id.nav_perfil_usuario) {
+        if (id == R.id.nav_perfil_layout) {
             fragmentManager.beginTransaction()
                     .replace(R.id.content_frame,
-                            new PerfilUsuario())
+                            new PerfilFragment())
                     .commit();
         } else if (id == R.id.nav_second_layout) {
             getFragmentManager().beginTransaction()

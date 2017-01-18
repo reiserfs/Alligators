@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -15,14 +16,14 @@
         android:layout_marginStart="12dp"
         android:layout_marginTop="12dp"
         android:scaleType="fitXY"
-        android:id="@+id/imageView4" />
+        android:id="@+id/ivFoto" />
 
     <TextView
         android:text="Nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/imageView4"
-        android:layout_toRightOf="@+id/imageView4"
+        android:layout_alignTop="@+id/ivFoto"
+        android:layout_toRightOf="@+id/ivFoto"
         android:layout_marginLeft="18dp"
         android:layout_marginStart="18dp"
         android:id="@+id/tvNome"
@@ -68,13 +69,20 @@
         android:layout_alignLeft="@+id/tvEmail"
         android:layout_alignStart="@+id/tvEmail" />
 
-    <LinearLayout
-        android:orientation="vertical"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/imageView4"
+        android:layout_below="@+id/ivFoto"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="20dp"
-        android:id="@+id/llOne"></LinearLayout>
+        android:layout_alignParentStart="true">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ivFoto"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="20dp"
+            android:id="@+id/llOne"></LinearLayout>
+    </ScrollView>
 </RelativeLayout>

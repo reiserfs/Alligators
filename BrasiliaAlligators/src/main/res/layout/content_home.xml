@@ -15,5 +15,13 @@
     <FrameLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></FrameLayout>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/alligatorslogo"
+            android:id="@+id/imageView3"
+            android:alpha="0.2" />
+    </FrameLayout>
 </RelativeLayout>
