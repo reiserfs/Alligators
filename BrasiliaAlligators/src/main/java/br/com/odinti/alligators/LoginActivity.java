@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         final LocalStore localStore = new LocalStore(this);
         final Login login = localStore.getLoggedIn();
 
-        if (login.user.length() > 0) {
+        if (login.user!=null) {
             etEmail.setText(login.user);
             etPassword.setText(login.password);
         }

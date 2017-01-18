@@ -19,7 +19,12 @@ public class LocalStore {
 
     public void storeData(Login user){
         SharedPreferences.Editor spEditor = localDatabase.edit();
-        spEditor.putString("user",user.user);
+        try {
+            spEditor.putString("user",CryptoHelper.encrypt(user.user,seedValue));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         try {
             spEditor.putString("password",CryptoHelper.encrypt(user.password,seedValue));
         } catch (Exception e) {
@@ -34,12 +39,18 @@ public class LocalStore {
     }
 
     public Login getLoggedIn() {
-        String user = localDatabase.getString("user","");
-        String password = localDatabase.getString("password","");
+        String user = null;
+        String password = null;
         try {
-            password = CryptoHelper.decrypt(password,seedValue);
+            user = CryptoHelper.decrypt(localDatabase.getString("user",""),seedValue);
         } catch (Exception e) {
-            e.printStackTrace();
+            //e.printStackTrace();
+            //Log.d("V",String.valueOf(e));
+        }
+        try {
+            password = CryptoHelper.decrypt(localDatabase.getString("password",""),seedValue);
+        } catch (Exception e) {
+            //e.printStackTrace();
             //Log.d("V",String.valueOf(e));
         }
 

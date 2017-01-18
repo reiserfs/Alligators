@@ -54,7 +54,7 @@ public class PerfilFragment extends Fragment {
                 try {
                     associado = new JSONObject(output).getJSONObject("associado");
                 } catch (JSONException e) {
-                    e.printStackTrace();
+                   // e.printStackTrace();
                     jsongood = false;
                 }
                 if (jsongood) {

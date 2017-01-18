@@ -14,9 +14,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import java.net.CookieHandler;
-import java.net.CookieManager;
-
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -102,10 +99,10 @@ public class HomeActivity extends AppCompatActivity
                     .replace(R.id.content_frame,
                             new PerfilFragment())
                     .commit();
-        } else if (id == R.id.nav_second_layout) {
+        } else if (id == R.id.nav_mensalidade_layout) {
             getFragmentManager().beginTransaction()
                     .replace(R.id.content_frame,
-                            new SecondFragment())
+                            new MensalidadeFragment())
                     .commit();
 
         } else if (id == R.id.nav_third_layout) {

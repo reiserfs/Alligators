@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:text="Vencimento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tvVencimento"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_light"
+        android:paddingRight="13dp" />
+
+    <TextView
+        android:text="Pagamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPagamento"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_light"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tvVencimento"
+        android:layout_toEndOf="@+id/tvVencimento"
+        android:paddingRight="13dp" />
+    <TextView
+        android:text="Valor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvValor"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_light"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tvPagamento"
+        android:layout_toEndOf="@+id/tvPagamento"
+        android:paddingRight="13dp" />
+    <TextView
+        android:text="Pago"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvPago"
+        android:textSize="18sp"
+        android:textStyle="normal|bold"
+        android:textColor="@android:color/black"
+        android:background="@android:color/holo_green_light"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tvValor"
+        android:layout_toEndOf="@+id/tvValor"
+        android:paddingRight="13dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tvVencimento"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tbTabela">
+
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </TableLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
